@@ -5,8 +5,25 @@ pipeline {
 		stage ('Compile Stage') {
 			steps {
 				
-  				bat 'mvn clean compile'	
+  				bat 'mvn clean compile'
+				
 			}
 		}
+
+		stage ('Testing Stage') {
+			steps {
+				
+				bat 'mvn test'
+				
+			}
+		}
+		stage ('Installing Stage') {
+			steps {
+				
+					bat 'mvn install'
+				
+			}				
+		}	
+		
 	}
 }
